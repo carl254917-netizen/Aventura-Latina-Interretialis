@@ -1,0 +1,130 @@
+/* ==========================================================================
+   COMPONENTS & INTERACTION (components.css)
+   ========================================================================== */
+
+/* --- TYPOGRAPHIE NARRATIVE --- */
+.game-title {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.game-description {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+#story-text {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+    white-space: pre-line; /* Respecte les sauts de lignes de l'histoire */
+}
+
+/* --- MOTS AVEC DÉFINITION (Effet au survol) --- */
+.vocab-word {
+    border-bottom: 1px dotted var(--accent-color);
+    cursor: help;
+    color: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.vocab-word:hover {
+    background-color: var(--shadow-color);
+}
+
+/* Désactivation visuelle si l'aide au vocabulaire est éteinte */
+.lexicon-disabled .vocab-word {
+    border-bottom: none !important;
+    cursor: default !important;
+    background-color: transparent !important;
+}
+
+/* --- BOUTONS --- */
+/* Boutons de contrôle du header (Discrets) */
+.control-btn {
+    background: transparent;border: 1px solid var(--btn-control-border); /* <--- MODIFIÉ ICI */
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.control-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Grand bouton de démarrage */
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Conteneur des réponses et choix du RPG */
+#choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+/* Boutons de choix narratifs */
+#choices-container button {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+
+#choices-container button:hover {
+    border-color: var(--accent-color);
+    background-color: var(--shadow-color);
+    transform: translateX(4px); /* Léger décalage vers la droite au survol */
+}
+
+/* --- L'ENCADRÉ FLOTTANT (Tooltip) --- */
+#tooltip-box {
+    position: absolute;
+    z-index: 1000;
+    max-width: 280px;
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-style: italic;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: none; /* Empêche le tooltip de clignoter sous la souris */
+    transition: opacity 0.15s ease;
+}
+
+#tooltip-box.hidden {
+    display: none !important;
+    opacity: 0;
+}

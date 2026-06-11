@@ -1,0 +1,42 @@
+/* ==========================================================================
+   THEMES MANAGEMENT (Variables & Base Switch)
+   ========================================================================== */
+
+/* Mode Clair par défaut (Inspiré du vieux parchemin pour le côté antique) */
+.theme-light {
+    --bg-color: #fdfbf7;
+    --text-color: #2c2421;
+    --accent-color: #800020; /* Rouge impérial / Bourgogne */
+    --accent-hover: #b3002d;
+    --border-color: #e6dfd3;
+    --header-bg: #f5efe4;
+    --tooltip-bg: #ffffff;
+    --tooltip-text: #2c2421;
+    --hover-color: rgba(44, 36, 33, 0.1);
+    --shadow-color: rgba(44, 36, 33, 0.1);
+    --btn-text-color: #ffffff;
+    --btn-control-border: #b8af9e; /* Bordure gris-brun élégante et visible sur parchemin */
+}
+
+/* Mode Sombre (Grand confort visuel nocturne) */
+.theme-dark {
+    --bg-color: #121212;
+    --text-color: #e0dcd3;
+    --accent-color: #d4af37; /* Or antique */
+    --accent-hover: #f3e5ab;
+    --border-color: #2c2c2c;
+    --header-bg: #1a1a1a;
+    --tooltip-bg: #222222;
+    --tooltip-text: #e0dcd3;
+    --hover-color: rgba(224, 220, 211, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --btn-text-color: #121212;
+    --btn-control-border: #e0dcd3; /* Éclaire la bordure avec la couleur crème du texte */
+}
+
+/* Transition douce lors du changement de thème */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Fond du blason noir/sombre -->
+    <polygon points="50,5 90,25 90,65 50,95 10,65 10,25" fill="#1a1a1a" stroke="#d4af37" stroke-width="4"/>
+    
+    <!-- Lettre A de style romain (dorée) -->
+    <text x="50" y="65" font-family="'Times New Roman', serif" font-size="55" font-weight="bold" fill="#d4af37" text-anchor="middle">A</text>
+    
+    <!-- Petite couronne de laurier simplifiée en bas -->
+    <path d="M 25,70 Q 50,85 75,70" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="4,4"/>
+</svg>

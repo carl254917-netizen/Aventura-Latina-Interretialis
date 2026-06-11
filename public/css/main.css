@@ -1,0 +1,156 @@
+/* ==========================================================================
+   FONTS REGISTRATION (Local Assets)
+   ========================================================================== */
+
+/* Titres - Style Romain/Antique */
+@font-face {
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap; /* Permet d'afficher une police système en attendant le chargement */
+    src: url('../assets/fonts/cinzel-v26-latin-700.woff2') format('woff2');
+}
+
+/* Texte courant - Style Littéraire Classique */
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/eb-garamond-v32-latin-regular.woff2') format('woff2');
+}
+
+/* Texte courant - Italique pour les descriptions et l'aide */
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/eb-garamond-v32-latin-italic.woff2') format('woff2');
+}
+
+/* ==========================================================================
+   GLOBAL STYLES & LAYOUT
+   ========================================================================== */
+/* ... conserve le reste de ton code en modifiant juste la propriété font-family ci-dessous : */
+
+html, body {
+    height: 100%;
+    font-family: "EB Garamond", "Georgia", serif; /* EB Garamond devient la police principale */
+    line-height: 1.6;
+}
+
+.game-title, .header-title {
+    font-family: "Cinzel", "Times New Roman", serif; /* Cinzel s'applique aux titres */
+}
+
+/* ==========================================================================
+   GLOBAL STYLES & LAYOUT (main.css)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Georgia", "Times New Roman", serif; /* Style littéraire et immersif */
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* --- BANDEAU SUPÉRIEUR (Header) --- */
+#game-header {
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    height: 60px;
+    transition: background-color 0.3s ease;
+}
+
+.header-title {
+    font-family: "Cinzel", "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    /* Nouvelles propriétés pour l'interactivité */
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Effet visuel au survol */
+.header-title:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- CONTENEUR PRINCIPAL (Ajustement automatique) --- */
+#app-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 800px; /* Largeur de lecture idéale */
+    margin: 0 auto;
+}
+
+/* --- AFFICHAGE ET GESTION DES ÉCRANS (SPA Logic) --- */
+.hidden-screen {
+    display: none !important;
+}
+
+.active-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+#intro-screen {
+    text-align: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+#game-screen {
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Animation d'apparition fluide des scènes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE DESIGN (Mobiles et Smartphones) --- */
+@media (max-width: 600px) {
+    #game-header {
+        padding: 0.5rem 1rem;
+    }
+    #app-container {
+        padding: 1rem;
+    }
+    html {
+        font-size: 95%; /* Réduction légère de la police sur mobile pour préserver l'espace */
+    }
+}

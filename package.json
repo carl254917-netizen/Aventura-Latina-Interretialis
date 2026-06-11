@@ -1,0 +1,23 @@
+{
+  "name": "latin-adventure",
+  "version": "1.0.0",
+  "description": "Un jeu de rôle textuel immersif pour l'apprentissage du latin par la méthode directe.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Ton Nom",
+  "license": "MIT",
+  "private": true
+}

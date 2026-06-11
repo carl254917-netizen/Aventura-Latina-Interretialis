@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+    <meta charset="UTF-8">
+    <!-- Balise vitale pour que le jeu s'adapte aux smartphones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Latina Interretialis</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Importation des feuilles de style selon l'arborescence définie -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="theme-light"> <!-- Le thème clair est défini par défaut -->
+
+    <!-- En-tête contenant les options du jeu (toujours visible) -->
+    <header id="game-header">
+        <div id="btn-logo-reset" class="header-title" role="button" tabindex="0" aria-label="Ludum reinitiare">A.L.I.</div>
+        <div class="header-controls">
+            <!-- Bouton d'aide au vocabulaire (Dictionnaire) -->
+            <button id="btn-toggle-lexicon" class="control-btn" aria-label="Auxilium vocabulorum">
+                <img src="assets/images/icon-book.svg" alt="" width="20" height="20">
+            </button>
+            <!-- Bouton pour basculer entre le mode clair et sombre -->
+            <button id="btn-toggle-theme" class="control-btn" aria-label="Modus obscurus vel clarus">
+                <img src="assets/images/icon-theme.svg" alt="" width="20" height="20">
+            </button>
+        </div>
+    </header>
+
+    <main id="app-container">
+        
+        <!-- ÉCRAN D'INTRODUCTION -->
+        <section id="intro-screen" class="active-screen">
+            <h1 class="game-title">Aventura Latina Interretialis</h1>
+            <p class="game-description">
+                Salve viator ! Hic ludus te in mundum fabulosum rapit. 
+                Sola lingua Latina via tua est. Lege, intellege, et elige acta tua sapienter.
+            </p>
+            <!-- Bouton pour démarrer l'aventure -->
+            <button id="btn-start-game" class="primary-btn">Incipe Aventuram</button>
+        </section>
+
+        <!-- ÉCRAN DE JEU (Masqué par défaut au chargement via CSS/JS) -->
+        <section id="game-screen" class="hidden-screen">
+            <!-- Conteneur pour le texte descriptif de la situation -->
+            <article id="story-text">
+                <!-- Le texte généré par engine.js et ui.js apparaîtra ici -->
+            </article>
+
+            <!-- Conteneur pour les choix (les réponses du joueur) -->
+            <nav id="choices-container">
+                <!-- Les boutons de choix seront générés ici dynamiquement -->
+            </nav>
+        </section>
+
+    </main>
+
+    <!-- ÉLÉMENT FLOTTANT : L'encadré de définition (Masqué par défaut) -->
+    <div id="tooltip-box" class="hidden">
+        <!-- La définition en latin du mot survolé apparaîtra ici -->
+    </div>
+
+    <!-- Importation des scripts (L'ordre est important si main.js utilise les autres) -->
+    <script src="js/ui.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

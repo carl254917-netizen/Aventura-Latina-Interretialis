@@ -1,0 +1,357 @@
+{
+  "initium": {
+    "text": "Tenebrae densae te circumdant. Arbores vetustae, ramis tortuosis, lucem solis impediunt. Sonitus avium procul auditur, sed silvestris solitudo te terret. Ante te, semita angusta inter frutices ducit. Ad pedes tuos, in herba alta, aliquid fulget.",
+    "choices": [
+      { "text": "Tolle gladium qui in herba iacet.", "nextScene": "silva_gladium", "gainItem": "gladius" },
+      { "text": "Ne cures id quod fulget; semitam sequere.", "nextScene": "silva_semita" }
+    ]
+  },
+  "silva_gladium": {
+    "text": "Gladium tollis. Ferrum, etsi paulum rubiginosum, adhuc acutum est. Pondus eius in manu tua firmitatem tibi praebet. Nunc semitam ante te conspicis, quae ad orientem ducit.",
+    "choices": [
+      { "text": "Semitam sequere versus orientem.", "nextScene": "silva_semita" }
+    ]
+  },
+  "silva_semita": {
+    "text": "Per semitam progrederis. Frutices te vexant, sed tandem lucem inter arbores vides. Vox hominis, fessa et timida, ex umbris auditur: 'Quis adest? Subveni mihi, quaeso!'",
+    "choices": [
+      { "text": "Voci appropinqua et hominem inveni.", "nextScene": "silva_viator" },
+      { "text": "Cautus mane et vocem ignora; ad lucem perge.", "nextScene": "oppidum_porta" }
+    ]
+  },
+  "silva_viator": {
+    "text": "Inter dumeta, virum invenis, veste lacerata, qui pede vulnerato humi sedet. 'Gratias tibi ago, peregrine,' inquit. 'Latrones me adorti sunt et omnia mea abstulerunt. Si Oppidum Vetus petis, semita recta te ducet. Cave insidias!'",
+    "choices": [
+      { "text": "Roga eum quid de latronibus sciat.", "nextScene": "silva_viator_latrones" },
+      { "text": "Vale ei dic et ad oppidum perge.", "nextScene": "oppidum_porta" }
+    ]
+  },
+  "silva_viator_latrones": {
+    "text": "'Latrones in silva profunda latent,' viator murmurat, 'sed plerumque non hac via vagantur. Habe curam tamen, nam vias incertas reddunt.' Deinde tacet, dolore pressus.",
+    "choices": [
+      { "text": "Eum relinque et ad oppidum perge.", "nextScene": "oppidum_porta" }
+    ]
+  },
+  "silva_purgata": {
+    "text": "Ad locum priorem ducebatur reverteris. Herba alta nunc vacua est; nihil amplius in ea fulget. Solum vestigia tua in pulvere manent. Semita ad oppidum te exspectat.",
+    "choices": [
+      { "text": "Ad oppidum perge.", "nextScene": "oppidum_porta" }
+    ]
+  },
+  "oppidum_porta": {
+    "text": "Ante te portae ligneae Oppidi Veteris stant, apertae et a custode armato vigilatae. Intra moenia, fumus ex tectis ascendit et clamores mercatorum audiuntur. Custos te oculis examinat.",
+    "choices": [
+      { "text": "Saluta custodem.", "nextScene": "custos_dialogus" },
+      { "text": "Intra in oppidum sine mora.", "nextScene": "oppidum_centrum" },
+      { "text": "Revertere in silvam tenebrosam.", "nextScene": "silva_purgata" }
+    ]
+  },
+  "custos_dialogus": {
+    "text": "Custos caput inclinat. 'Salve, peregrine. Pauci hac transeunt tempestate. Si quid auxilii in oppido quaeris, Lucium mercatorem in foro adi; semper aliquid negotii habet.'",
+    "choices": [
+      { "text": "Roga de periculis viae.", "nextScene": "custos_pericula" },
+      { "text": "Gratias age et oppidum intra.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "custos_pericula": {
+    "text": "'Lacus Altus ad occidentem situs est; aquae eius altae et frigidae sunt, et fama est nescio quid sub undis latere. Ad meridiem, Crypta Sacra antiqua iacet, sed nemo qui intravit umquam rediit.' Custos umeris contractis silet.",
+    "choices": [
+      { "text": "Gratias age custodi et oppidum intra.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "oppidum_centrum": {
+    "text": "Post longam viam, pervenis in centrum Oppidi Veteris. Plateae lapideae in omnes partes ducunt. Ad dextram, Taberna fumum exhalat et risus continet; ad sinistram, Templum vetustum silentio stat; ante te, Forum plenum est mercatorum vocibus. Semita ad occidentem ducit ad Lacum Altum, et alia ad meridiem versus Cryptam Sacram.",
+    "choices": [
+      { "text": "Intra in Tabernam.", "nextScene": "taberna_intus" },
+      { "text": "Intra in Templum.", "nextScene": "templum_intus" },
+      { "text": "Perge ad Forum.", "nextScene": "forum_intus" },
+      { "text": "Exi ex oppido versus Lacum Altum.", "nextScene": "lacus_litus" },
+      { "text": "Exi ex oppido versus Cryptam Sacram.", "nextScene": "crypta_porta", "requiresItem": "clavis_cryptae" },
+      { "text": "Sequi semitam ad Cryptam.", "nextScene": "crypta_clausa" }
+    ]
+  },
+  "crypta_clausa": {
+    "text": "Pervenis ad ostium Cryptae Sacrae, sed grandis sera ferrea ianuam claudit. Sigilla antiqua in lapide sculpta sunt. Sine clave apta, ianua immota manet.",
+    "choices": [
+      { "text": "Revertere ad centrum oppidi.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "taberna_intus": {
+    "text": "Intras in Tabernam. Calor ignis et odor panis recentis te excipiunt. Pauci viatores in mensis sedent, vino fruentes. Post mensam, tabernarius corpulentus pocula lavat et tibi annuit.",
+    "choices": [
+      { "text": "Allocutus tabernarium.", "nextScene": "tabernarius_dialogus" },
+      { "text": "Ausculta sermones viatorum.", "nextScene": "taberna_rumores" },
+      { "text": "Exi e taberna.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "tabernarius_dialogus": {
+    "text": "'Salve, hospes!' tabernarius clamat. 'Vis cervisiam an vinum? Aut forte quaeris cubiculum ad quiescendum?' Oculi eius curiositate fulgent. 'Aut fortasse aliquid de Lacu Altu scire vis? Multi piscatores ibi pavorem inveniunt.'",
+    "choices": [
+      { "text": "Roga de Lacu Alto.", "nextScene": "tabernarius_lacus" },
+      { "text": "Roga de Crypta Sacra.", "nextScene": "tabernarius_crypta" },
+      { "text": "Gratias age et discede.", "nextScene": "taberna_intus" }
+    ]
+  },
+  "tabernarius_lacus": {
+    "text": "'Lacus Altus,' inquit tabernarius, voce demissa, 'olim purus erat, sed nunc piscatores umbras sub aqua vident. Quidam dicunt anulum aureum in fundo lacus iacere, ab uno qui in undis periit.'",
+    "choices": [
+      { "text": "Roga si quis anulum quaesivit.", "nextScene": "tabernarius_anulus" },
+      { "text": "Gratias age et discede.", "nextScene": "taberna_intus" }
+    ]
+  },
+  "tabernarius_anulus": {
+    "text": "'Audivi Lucium mercatorem, in foro, anulum talem perdidisse,' tabernarius respondet. 'Animo fracto videtur dies hos. Forsitan ille tibi plus narrare possit.'",
+    "choices": [
+      { "text": "Gratias age et discede.", "nextScene": "taberna_intus" }
+    ]
+  },
+  "tabernarius_crypta": {
+    "text": "'Crypta Sacra?' tabernarius vocem premit. 'Locus maledictus, ubi sacerdotes antiqui res arcanas celaverunt. Clavis cryptae, fama est, a sacerdote templi nostri custoditur, sed eam nemini dat sine causa iusta.'",
+    "choices": [
+      { "text": "Gratias age et discede.", "nextScene": "taberna_intus" }
+    ]
+  },
+  "taberna_rumores": {
+    "text": "Duo viatores de itineribus suis garriunt. Unus narrat se herbam medicam rarissimam prope Lacum Altum vueisse, sed se eam tangere noluisse, timens venenum. Alter ridet et caput movet.",
+    "choices": [
+      { "text": "Reverte ad mensam tabernarii.", "nextScene": "taberna_intus" }
+    ]
+  },
+  "templum_intus": {
+    "text": "Intras in Templum, ubi silentium sacrum regnat. Columnae marmoreae ad fastigium ascendunt, et statua dei antiqui in medio stat. Senex sacerdos, veste alba indutus, ante aram precatur. Te audiens, sese vertit.",
+    "choices": [
+      { "text": "Allocutus sacerdotem.", "nextScene": "sacerdos_dialogus" },
+      { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica" },
+      { "text": "Exi e templo.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "sacerdos_dialogus": {
+    "text": "'Pax tecum, viator,' sacerdos dicit voce gravi. 'Raro hospites huc veniunt. Si rectam viam quaeris, fortasse ego te adiuvare possum -- sed et ego auxilio egeo. Morbus me afflixit, et sola herba medica ex Lacu Alto me sanare potest.'",
+    "choices": [
+      { "text": "Promitte te herbam quaesiturum.", "nextScene": "sacerdos_quest_accept", "updateQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
+      { "text": "Roga de Crypta Sacra et clave eius.", "nextScene": "sacerdos_crypta" },
+      { "text": "Recusa et discede.", "nextScene": "templum_intus" }
+    ]
+  },
+  "sacerdos_quest_accept": {
+    "text": "'Gratias tibi ago, bone viator,' sacerdos suspirat. 'Herba medica, foliis argenteis et flore caeruleo, prope ripam Lacus Alti crescere solet. Cum eam inveneris, ad me revertere.'",
+    "choices": [
+      { "text": "Roga de Crypta Sacra et clave eius.", "nextScene": "sacerdos_crypta" },
+      { "text": "Vale dic sacerdoti et discede.", "nextScene": "templum_intus" }
+    ]
+  },
+  "sacerdos_crypta": {
+    "text": "Sacerdos vultum contrahit. 'Crypta Sacra continet arcana quae homines nescire debent. Clavem cryptae custodio, sed eam non dabo nisi animum tuum bonum esse cognovero. Sana me primum, et tum de clave loquemur.'",
+    "choices": [
+      { "text": "Accipe consilium et discede.", "nextScene": "templum_intus" }
+    ]
+  },
+  "sacerdos_herba_data": {
+    "text": "Sacerdos herbam argenteam manibus tremulis accipit. 'Hoc est! Gratias maximas tibi ago, viator.' Herbam statim masticat, et color in genas eius redit. 'Tu vere bonus es. Ecce, clavem cryptae tibi do, ut sigilla antiqua aperias. Sed cave -- intra Cryptam, umbrae antiquae adhuc vivunt.'",
+    "choices": [
+      { "text": "Accipe clavem et gratias age.", "nextScene": "templum_intus", "gainItem": "clavis_cryptae", "updateQuest": { "id": "herba_sacerdotis", "status": "completed" } }
+    ]
+  },
+  "forum_intus": {
+    "text": "Forum vivido strepitu plenum est. Mercatores telas, vasa, et fructus vendunt. In angulo, vir maestus, veste pulchra sed neglecta, sedet solus, caput manibus tenens. Tabula super tabernam eius nomen 'Lucius' ostendit.",
+    "choices": [
+      { "text": "Allocutus Lucium mercatorem.", "nextScene": "lucius_dialogus" },
+      { "text": "Redde anulum aureum Lucio.", "nextScene": "lucius_anulus_redditus", "requiresItem": "anulus_aureus" },
+      { "text": "Vaga inter alias tabernas.", "nextScene": "forum_tabernae" },
+      { "text": "Reverte ad centrum oppidi.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "lucius_dialogus": {
+    "text": "Lucius oculos tollit. 'Salve... excusa me, animo turbato sum. Anulus aureus, ab avo meo mihi datus, mihi ereptus est -- non, lapsus est, in Lacu Alto, cum piscarer. Sine eo, infortunium familiae meae timeo.'",
+    "choices": [
+      { "text": "Promitte te anulum quaesiturum.", "nextScene": "lucius_quest_accept", "updateQuest": { "id": "anulus_lucii", "status": "in_progress" } },
+      { "text": "Roga cur anulus tam pretiosus sit.", "nextScene": "lucius_anulus_historia" },
+      { "text": "Dic te non posse adiuvare.", "nextScene": "forum_intus" }
+    ]
+  },
+  "lucius_anulus_historia": {
+    "text": "'Anulus iste,' Lucius narrat, 'per generationes in familia mea servatus est. Sigillum gentis nostrae in eo sculptum est. Sine eo signo, mercatores alii fidem mihi non habebunt, et negotium meum ruet.'",
+    "choices": [
+      { "text": "Promitte te anulum quaesiturum.", "nextScene": "lucius_quest_accept", "updateQuest": { "id": "anulus_lucii", "status": "in_progress" } },
+      { "text": "Dic te non posse adiuvare.", "nextScene": "forum_intus" }
+    ]
+  },
+  "lucius_quest_accept": {
+    "text": "Lucii oculi spe lucent. 'Vere? O dii, gratias vobis ago! Anulus prope saxum magnum, ad ripam orientalem lacus, in aquam cecidit. Quaere ibi, quaeso. Si eum reddideris, te munere digno donabo.'",
+    "choices": [
+      { "text": "Vale dic Lucio et discede.", "nextScene": "forum_intus" }
+    ]
+  },
+  "lucius_anulus_redditus": {
+    "text": "Lucius anulum aspicit, et lacrimae gaudii in oculis eius apparent. 'Hic est! Hic est anulus meus! Tibi infinitas gratias ago, viator generosissime.' E sinu suo bursam parvam extrahit. 'Accipe hoc -- est gladius vetus sed bonus, ex thesauro familiae meae.'",
+    "choices": [
+      { "text": "Accipe donum et vale dic.", "nextScene": "forum_intus", "gainItem": "gladius_lucii", "updateQuest": { "id": "anulus_lucii", "status": "completed" } }
+    ]
+  },
+  "forum_tabernae": {
+    "text": "Inter tabernas vagaris. Una mulier vasa fictilia vendit, alius vir pelles animalium ostendit. Omnes te salutant amice, sed nihil novi hic invenis quod ad iter tuum pertineat.",
+    "choices": [
+      { "text": "Reverte ad Lucium.", "nextScene": "forum_intus" },
+      { "text": "Reverte ad centrum oppidi.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "lacus_litus": {
+    "text": "Pervenis ad ripam Lacus Alti. Aqua, colore caeruleo-viridi, sub sole tranquille fulget, sed altitudo eius abyssum celare videtur. Ad orientem, magnum saxum prope ripam stat. Ad occidentem, flores caerulei inter herbas crescunt.",
+    "choices": [
+      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum" },
+      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba" },
+      { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
+      { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "lacus_saxum": {
+    "text": "Iuxta saxum magnum, aqua paulo limpidior est. Sub superficie, aliquid auro simile inter lapides minores fulget.",
+    "choices": [
+      { "text": "Immitte manum in aquam et cape rem fulgentem.", "nextScene": "lacus_anulus_inventus", "gainItem": "anulus_aureus" },
+      { "text": "Ne cures et ad ripam revertere.", "nextScene": "lacus_litus" }
+    ]
+  },
+  "lacus_anulus_inventus": {
+    "text": "Manum immittis in aquam frigidam. Digiti tui anulum aureum, sigillis ornatum, inveniunt. Hic certe est anulus quem Lucius perdidit! Aqua circum saxum nunc vacua videtur, nullis amplius rebus fulgentibus.",
+    "choices": [
+      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_anulus" }
+    ]
+  },
+  "lacus_litus_post_anulus": {
+    "text": "Stas iterum in ripa Lacus Alti. Saxum magnum ad orientem nihil amplius continet. Flores caerulei adhuc ad occidentem crescunt. Aqua profunda ante te se extendit.",
+    "choices": [
+      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba" },
+      { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
+      { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "lacus_herba": {
+    "text": "Inter herbas altas, flores caerulei cum foliis argenteis crescunt -- exacte sicut sacerdos descripsit! Odor eorum dulcis et medicinalis est.",
+    "choices": [
+      { "text": "Collige herbam medicam.", "nextScene": "lacus_herba_collecta", "gainItem": "herba_medica" },
+      { "text": "Ne tangas et ad ripam revertere.", "nextScene": "lacus_litus" }
+    ]
+  },
+  "lacus_herba_collecta": {
+    "text": "Caute herbam medicam vellis, radices integras servans. Eam in sacculo tuo recondis. Locus ubi crescebat nunc nudus est, solo tantum nudo relicto.",
+    "choices": [
+      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_herba" }
+    ]
+  },
+  "lacus_litus_post_herba": {
+    "text": "Stas in ripa Lacus Alti. Locus florum caeruleorum ad occidentem nunc vacuus est. Saxum magnum ad orientem adhuc stat. Aqua profunda ante te lucet.",
+    "choices": [
+      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum" },
+      { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
+      { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "lacus_profundum": {
+    "text": "Propius ad ripam accedis et in aquam nigram despicis. Imago tua in superficie tremit. Subito, umbra magna sub aqua movetur -- forte piscis ingens, forte aliquid aliud. Frigus subitum per corpus tuum currit. Melius est non diutius hic manere.",
+    "choices": [
+      { "text": "Recede festinanter ab aqua.", "nextScene": "lacus_litus" }
+    ]
+  },
+  "crypta_porta": {
+    "text": "Clavem in seram antiquam inseris. Cum stridore gravi, ianua ferrea aperitur, et aer frigidus ac mucidus ex Crypta Sacra exhalat. Scalae lapideae in tenebras descendunt.",
+    "choices": [
+      { "text": "Descende in Cryptam Sacram.", "nextScene": "crypta_vestibulum" },
+      { "text": "Adhuc non es paratus; revertere ad oppidum.", "nextScene": "oppidum_centrum" }
+    ]
+  },
+  "crypta_vestibulum": {
+    "text": "In vestibulo Cryptae, faces antiquae, mirabili modo, etiamnunc ardent. Parietes sculpturis arcanis ornantur, imagines bestiarum et deorum antiquorum repraesentantes. Duo itinera ante te patent: unum ad sinistram, ubi sonus aquae fluentis auditur, alterum ad dextram, ubi silentium altum regnat.",
+    "choices": [
+      { "text": "Perge ad sinistram (sonus aquae).", "nextScene": "crypta_aqua" },
+      { "text": "Perge ad dextram (silentium).", "nextScene": "crypta_silentium" }
+    ]
+  },
+  "crypta_aqua": {
+    "text": "Sequeris sonum aquae et pervenis ad cameram ubi rivus subterraneus per saxa fluit. Pons lapideus, vetustate corrosus, rivum transit. In medio ponte, symbolum idem ac in anulo Lucii sculptum est.",
+    "choices": [
+      { "text": "Transi pontem cautissime.", "nextScene": "crypta_pons", "requiresItem": "anulus_aureus" },
+      { "text": "Sine anulo, ne pontem temptes; revertere.", "nextScene": "crypta_vestibulum" }
+    ]
+  },
+  "crypta_pons": {
+    "text": "Cum anulum tangis, symbolum in ponte luce tenui fulget, et pons firmior videtur sub pedibus tuis. Pontem sine periculo transis et ad ianuam aeneam pervenis, in cuius medio cavum forma gladii sculptum est.",
+    "choices": [
+      { "text": "Insere gladium in cavum.", "nextScene": "crypta_ianua_aenea", "requiresItem": "gladius" },
+      { "text": "Sine gladio apto, ianuam non aperies; revertere.", "nextScene": "crypta_vestibulum" }
+    ]
+  },
+  "crypta_ianua_aenea": {
+    "text": "Gladius perfecte in cavum convenit. Mechanismus antiquus movetur, et ianua aenea cum sonitu profundo aperitur, ducens ad cameram centralem Cryptae.",
+    "choices": [
+      { "text": "Intra in cameram centralem.", "nextScene": "crypta_centralis" }
+    ]
+  },
+  "crypta_silentium": {
+    "text": "Per corridorem silentem progrederis. Aer frigidior fit. Pervenis ad cameram parvam, ubi ossa antiqua humi iacent et arca lignea, sigillis clausa, in angulo posita est.",
+    "choices": [
+      { "text": "Aperi arcam ligneam.", "nextScene": "crypta_arca" },
+      { "text": "Ne tangas arcam; revertere ad vestibulum.", "nextScene": "crypta_vestibulum" }
+    ]
+  },
+  "crypta_arca": {
+    "text": "Sigilla arcae, vetustate fracta, facile cedunt. Intus invenis pergamenum antiquum et amuletum parvum argenteum. Pergamenum continet mappam Vallis Umbrosae et signa quae viam ad cameram centralem Cryptae monstrant.",
+    "choices": [
+      { "text": "Sume amuletum et pergamenum.", "nextScene": "crypta_silentium_post", "gainItem": "amuletum_argenteum" }
+    ]
+  },
+  "crypta_silentium_post": {
+    "text": "Arca nunc vacua est, ossa adhuc in pulvere iacent. Cum mappa nunc in manibus tuis, viam ad cameram centralem clarius vides.",
+    "choices": [
+      { "text": "Revertere ad vestibulum.", "nextScene": "crypta_vestibulum" }
+    ]
+  },
+  "crypta_centralis": {
+    "text": "Intras in cameram centralem Cryptae Sacrae. Lux mysteriosa, sine fonte visibili, spatium illuminat. In medio, ara antiqua stat, et super eam, gemma magna rubra pulsat sicut cor. Umbrae circum parietes sussurare videntur.",
+    "choices": [
+      { "text": "Approprinqua arae et tange gemmam.", "nextScene": "crypta_finalis" },
+      { "text": "Examina sussurros umbrarum priusquam quidquam tangas.", "nextScene": "crypta_umbrae" }
+    ]
+  },
+  "crypta_umbrae": {
+    "text": "Propius ad parietes accedis. Sussurri verba antiqua formant: 'Custos... gemmae... vigila...' Subito, umbra densior ex pariete se separat et formam humanam sumit -- est custos antiquus, oculis igneis.",
+    "choices": [
+      { "text": "Para te ad pugnam cum custode.", "nextScene": "crypta_finalis" }
+    ]
+  },
+  "crypta_finalis": {
+    "text": "Custos umbrarum ante te stat, gladio nigro armatus. 'Quis es tu, qui pacem meam perturbas?' inquit voce sicut tonitru. 'Solum ille qui dignus est gemmam tangere hinc vivus exibit!'",
+    "choices": [
+      { "text": "Pugna contra custodem cum gladio rubiginoso.", "nextScene": "crypta_victoria", "requiresItem": "gladius" },
+      { "text": "Pugna contra custodem cum gladio Lucii.", "nextScene": "crypta_victoria", "requiresItem": "gladius_lucii" },
+      { "text": "Ostende amuletum argenteum custodi.", "nextScene": "crypta_amuletum_finale", "requiresItem": "amuletum_argenteum" }
+    ]
+  },
+  "crypta_amuletum_finale": {
+    "text": "Amuletum argenteum ante custodem extollis. Oculi eius igneis pallescunt. 'Hoc signum... tu non es hostis, sed heres antiquae custodiae.' Custos se inclinat et in umbras dissolvitur, gemmam tibi relinquens.",
+    "choices": [
+      { "text": "Sume gemmam rubram et exi e Crypta.", "nextScene": "finis_ludi_pacificus" }
+    ]
+  },
+  "crypta_victoria": {
+    "text": "Fortiter contra custodem pugnas. Post certamen longum et arduum, gladius tuus umbram custodis penetrat, qui cum clamore in nihilum evanescit. Camera silentio plena fit, et gemma rubra ante te remanet.",
+    "choices": [
+      { "text": "Sume gemmam rubram et exi e Crypta.", "nextScene": "finis_ludi_victoria" }
+    ]
+  },
+  "finis_ludi_victoria": {
+    "text": "Gemmam rubram sumis; calor eius per manum tuum fluit, sicut vita ipsa. Cum gemma in sacculo, ex Crypta Sacra ascendis, victor super umbras antiquas. Lux solis te excipit ante portas Oppidi Veteris. Iter tuum in Valle Umbrosa hic, feliciter, ad fine pervenit -- sed nova itinera te in regionibus ulterioribus exspectant.",
+    "choices": [
+      { "text": "Aventuram finire.", "nextScene": "finis" }
+    ]
+  },
+  "finis_ludi_pacificus": {
+    "text": "Gemmam rubram sumis; nullum dolorem sentis, solum pacem profundam. Custodia antiqua, per te, ad novum heredem transit. Ex Crypta Sacra ascendis, non ut victor per vim, sed ut successor per sapientiam. Vallis Umbrosa, pace recuperata, te novis itineribus vocat.",
+    "choices": [
+      { "text": "Aventuram finire.", "nextScene": "finis" }
+    ]
+  },
+  "finis": {
+    "text": "Gratias tibi pro ludo! Progressio tua nunc finita est. Potes logo 'ALI' cliccare ut de novo incipias.",
+    "choices": []
+  }
+}
