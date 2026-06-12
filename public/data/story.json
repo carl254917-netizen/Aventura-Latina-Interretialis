@@ -66,13 +66,13 @@
       { "text": "Intra in Templum.", "nextScene": "templum_intus" },
       { "text": "Perge ad Forum.", "nextScene": "forum_intus" },
       { "text": "Exi ex oppido versus Lacum Altum.", "nextScene": "lacus_litus" },
-      { "text": "Exi ex oppido versus Cryptam Sacram.", "nextScene": "crypta_porta", "requiresItem": "clavis_cryptae" },
       { "text": "Sequi semitam ad Cryptam.", "nextScene": "crypta_clausa" }
     ]
   },
   "crypta_clausa": {
     "text": "Pervenis ad ostium Cryptae Sacrae, sed grandis sera ferrea ianuam claudit. Sigilla antiqua in lapide sculpta sunt. Sine clave apta, ianua immota manet.",
     "choices": [
+      { "text": "Clavem in seram antiquam inserere", "nextScene": "crypta_porta", "requiresItem": "clavis_cryptae" },
       { "text": "Revertere ad centrum oppidi.", "nextScene": "oppidum_centrum" }
     ]
   },
