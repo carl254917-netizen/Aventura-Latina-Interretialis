@@ -121,7 +121,7 @@
     "text": "Intras in Templum, ubi silentium sacrum regnat. Columnae marmoreae ad fastigium ascendunt, et statua dei antiqui in medio stat. Senex sacerdos, veste alba indutus, ante aram precatur. Te audiens, sese vertit.",
     "choices": [
       { "text": "Allocutus sacerdotem.", "nextScene": "sacerdos_dialogus" },
-      { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica" },
+      { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica", "requiresQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
       { "text": "Exi e templo.", "nextScene": "oppidum_centrum" }
     ]
   },
@@ -129,6 +129,7 @@
     "text": "'Pax tecum, viator,' sacerdos dicit voce gravi. 'Raro hospites huc veniunt. Si rectam viam quaeris, fortasse ego te adiuvare possum -- sed et ego auxilio egeo. Morbus me afflixit, et sola herba medica ex Lacu Alto me sanare potest.'",
     "choices": [
       { "text": "Promitte te herbam quaesiturum.", "nextScene": "sacerdos_quest_accept", "updateQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
+      { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica", "requiresQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
       { "text": "Roga de Crypta Sacra et clave eius.", "nextScene": "sacerdos_crypta" },
       { "text": "Recusa et discede.", "nextScene": "templum_intus" }
     ]
@@ -137,6 +138,7 @@
     "text": "'Gratias tibi ago, bone viator,' sacerdos suspirat. 'Herba medica, foliis argenteis et flore caeruleo, prope ripam Lacus Alti crescere solet. Cum eam inveneris, ad me revertere.'",
     "choices": [
       { "text": "Roga de Crypta Sacra et clave eius.", "nextScene": "sacerdos_crypta" },
+      { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica", "requiresQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
       { "text": "Vale dic sacerdoti et discede.", "nextScene": "templum_intus" }
     ]
   },
@@ -149,7 +151,7 @@
   "sacerdos_herba_data": {
     "text": "Sacerdos herbam argenteam manibus tremulis accipit. 'Hoc est! Gratias maximas tibi ago, viator.' Herbam statim masticat, et color in genas eius redit. 'Tu vere bonus es. Ecce, clavem cryptae tibi do, ut sigilla antiqua aperias. Sed cave -- intra Cryptam, umbrae antiquae adhuc vivunt.'",
     "choices": [
-      { "text": "Accipe clavem et gratias age.", "nextScene": "templum_intus", "gainItem": "clavis_cryptae", "updateQuest": { "id": "herba_sacerdotis", "status": "completed" } }
+      { "text": "Accipe clavem et gratias age.", "nextScene": "templum_intus", "gainItem": "clavis_cryptae", "removeItem":"herba_medica", "updateQuest": { "id": "herba_sacerdotis", "status": "completed" } }
     ]
   },
   "forum_intus": {
@@ -185,7 +187,7 @@
   "lucius_anulus_redditus": {
     "text": "Lucius anulum aspicit, et lacrimae gaudii in oculis eius apparent. 'Hic est! Hic est anulus meus! Tibi infinitas gratias ago, viator generosissime.' E sinu suo bursam parvam extrahit. 'Accipe hoc -- est gladius vetus sed bonus, ex thesauro familiae meae.'",
     "choices": [
-      { "text": "Accipe donum et vale dic.", "nextScene": "forum_intus", "gainItem": "gladius_lucii", "updateQuest": { "id": "anulus_lucii", "status": "completed" } }
+      { "text": "Accipe donum et vale dic.", "nextScene": "forum_intus", "gainItem": "gladius_lucii", "removeItem":"anulus_aureus", "updateQuest": { "id": "anulus_lucii", "status": "completed" } }
     ]
   },
   "forum_tabernae": {
@@ -198,8 +200,8 @@
   "lacus_litus": {
     "text": "Pervenis ad ripam Lacus Alti. Aqua, colore caeruleo-viridi, sub sole tranquille fulget, sed altitudo eius abyssum celare videtur. Ad orientem, magnum saxum prope ripam stat. Ad occidentem, flores caerulei inter herbas crescunt.",
     "choices": [
-      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum" },
-      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba" },
+      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum", "excludesItem": "kn_anulus_saxi" },
+      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba", "excludesItem": "kn_herba_collecta" },
       { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
       { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
     ]
@@ -214,13 +216,13 @@
   "lacus_anulus_inventus": {
     "text": "Manum immittis in aquam frigidam. Digiti tui anulum aureum, sigillis ornatum, inveniunt. Hic certe est anulus quem Lucius perdidit! Aqua circum saxum nunc vacua videtur, nullis amplius rebus fulgentibus.",
     "choices": [
-      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_anulus" }
+      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_anulus", "gainItem": "kn_anulus_saxi" }
     ]
   },
   "lacus_litus_post_anulus": {
     "text": "Stas iterum in ripa Lacus Alti. Saxum magnum ad orientem nihil amplius continet. Flores caerulei adhuc ad occidentem crescunt. Aqua profunda ante te se extendit.",
     "choices": [
-      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba" },
+      { "text": "Perge ad flores caeruleos (occidens).", "nextScene": "lacus_herba", "excludesItem": "kn_herba_collecta" },
       { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
       { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
     ]
@@ -235,13 +237,13 @@
   "lacus_herba_collecta": {
     "text": "Caute herbam medicam vellis, radices integras servans. Eam in sacculo tuo recondis. Locus ubi crescebat nunc nudus est, solo tantum nudo relicto.",
     "choices": [
-      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_herba" }
+      { "text": "Revertere ad ripam.", "nextScene": "lacus_litus_post_herba", "gainItem": "kn_herba_collecta" }
     ]
   },
   "lacus_litus_post_herba": {
     "text": "Stas in ripa Lacus Alti. Locus florum caeruleorum ad occidentem nunc vacuus est. Saxum magnum ad orientem adhuc stat. Aqua profunda ante te lucet.",
     "choices": [
-      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum" },
+      { "text": "Perge ad saxum magnum (oriens).", "nextScene": "lacus_saxum", "excludesItem": "kn_anulus_saxi" },
       { "text": "Specta in aquam profundam.", "nextScene": "lacus_profundum" },
       { "text": "Revertere ad Oppidum Vetus.", "nextScene": "oppidum_centrum" }
     ]

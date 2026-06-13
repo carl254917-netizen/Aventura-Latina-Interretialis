@@ -54,6 +54,11 @@ window.Engine = {
                 return false; // On masque strictment le choix
             }
             
+            // Choix que la possession d'un objet bloque
+            if (choice.excludesItem && this.state.inventory.includes(choice.excludesItem)) {
+                return false; // On masque strictment le choix
+            }
+
             // Condition de quête
             if (choice.requiresQuest) {
                 const questId = choice.requiresQuest.id;
@@ -72,6 +77,10 @@ window.Engine = {
         // Gain d'un objet
         if (choice.gainItem && !this.state.inventory.includes(choice.gainItem)) {
             this.state.inventory.push(choice.gainItem);
+        }
+
+        if (choice.removeItem && this.state.inventory.includes(choice.removeItem)) {
+            this.state.inventory = this.state.inventory.filter(item => item !== choice.removeItem);
         }
 
         // Mise à jour d'une quête
