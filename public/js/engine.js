@@ -54,6 +54,11 @@ window.Engine = {
                 return false; // On masque strictment le choix
             }
             
+            // Condition d'objet 2 (si deux items requis)
+            if (choice.requiresItem2 && !this.state.inventory.includes(choice.requiresItem2)) {
+                return false; // On masque strictment le choix
+            }
+            
             // Choix que la possession d'un objet bloque
             if (choice.excludesItem && this.state.inventory.includes(choice.excludesItem)) {
                 return false; // On masque strictment le choix
@@ -77,6 +82,11 @@ window.Engine = {
         // Gain d'un objet
         if (choice.gainItem && !this.state.inventory.includes(choice.gainItem)) {
             this.state.inventory.push(choice.gainItem);
+        }
+
+        // Gain d'un second objet
+        if (choice.gainItem2 && !this.state.inventory.includes(choice.gainItem2)) {
+            this.state.inventory.push(choice.gainItem2);
         }
 
         if (choice.removeItem && this.state.inventory.includes(choice.removeItem)) {

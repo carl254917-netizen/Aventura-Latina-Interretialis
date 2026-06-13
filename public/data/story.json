@@ -120,7 +120,7 @@
   "templum_intus": {
     "text": "Intras in Templum, ubi silentium sacrum regnat. Columnae marmoreae ad fastigium ascendunt, et statua dei antiqui in medio stat. Senex sacerdos, veste alba indutus, ante aram precatur. Te audiens, sese vertit.",
     "choices": [
-      { "text": "Allocutus sacerdotem.", "nextScene": "sacerdos_dialogus" },
+      { "text": "Allocutus sacerdotem.", "nextScene": "sacerdos_dialogus", "excludesItem": "kn_herba_data" },
       { "text": "Trade herbam medicam sacerdoti.", "nextScene": "sacerdos_herba_data", "requiresItem": "herba_medica", "requiresQuest": { "id": "herba_sacerdotis", "status": "in_progress" } },
       { "text": "Exi e templo.", "nextScene": "oppidum_centrum" }
     ]
@@ -151,14 +151,14 @@
   "sacerdos_herba_data": {
     "text": "Sacerdos herbam argenteam manibus tremulis accipit. 'Hoc est! Gratias maximas tibi ago, viator.' Herbam statim masticat, et color in genas eius redit. 'Tu vere bonus es. Ecce, clavem cryptae tibi do, ut sigilla antiqua aperias. Sed cave -- intra Cryptam, umbrae antiquae adhuc vivunt.'",
     "choices": [
-      { "text": "Accipe clavem et gratias age.", "nextScene": "templum_intus", "gainItem": "clavis_cryptae", "removeItem":"herba_medica", "updateQuest": { "id": "herba_sacerdotis", "status": "completed" } }
+      { "text": "Accipe clavem et gratias age.", "nextScene": "templum_intus", "gainItem": "clavis_cryptae", "gainItem2": "kn_herba_data", "removeItem":"herba_medica", "updateQuest": { "id": "herba_sacerdotis", "status": "completed" } }
     ]
   },
   "forum_intus": {
     "text": "Forum vivido strepitu plenum est. Mercatores telas, vasa, et fructus vendunt. In angulo, vir maestus, veste pulchra sed neglecta, sedet solus, caput manibus tenens. Tabula super tabernam eius nomen 'Lucius' ostendit.",
     "choices": [
       { "text": "Allocutus Lucium mercatorem.", "nextScene": "lucius_dialogus" },
-      { "text": "Redde anulum aureum Lucio.", "nextScene": "lucius_anulus_redditus", "requiresItem": "anulus_aureus" },
+      { "text": "Redde anulum aureum Lucio.", "nextScene": "lucius_anulus_redditus","requiresQuest": { "id": "anulus_lucii", "status": "in_progress" }, "requiresItem": "anulus_aureus", "gainItem": "kn_anulus_redditus", "excludesItem": "kn_anulus_redditus" },
       { "text": "Vaga inter alias tabernas.", "nextScene": "forum_tabernae" },
       { "text": "Reverte ad centrum oppidi.", "nextScene": "oppidum_centrum" }
     ]
@@ -185,9 +185,9 @@
     ]
   },
   "lucius_anulus_redditus": {
-    "text": "Lucius anulum aspicit, et lacrimae gaudii in oculis eius apparent. 'Hic est! Hic est anulus meus! Tibi infinitas gratias ago, viator generosissime.' E sinu suo bursam parvam extrahit. 'Accipe hoc -- est gladius vetus sed bonus, ex thesauro familiae meae.'",
+    "text": "Lucius anulum aspicit, et lacrimae gaudii in oculis eius apparent. 'Hic est! Hic est anulus meus! Tibi infinitas gratias ago, viator generosissime.' E sinu suo bursam parvam extrahit. 'Accipe hoc -- est medallum vetum, ex thesauro familiae meae.' Observas medallum formae valde elongatae, glyphis ornatum.",
     "choices": [
-      { "text": "Accipe donum et vale dic.", "nextScene": "forum_intus", "gainItem": "gladius_lucii", "removeItem":"anulus_aureus", "updateQuest": { "id": "anulus_lucii", "status": "completed" } }
+      { "text": "Accipe donum et vale dic.", "nextScene": "forum_intus", "gainItem": "medallum_lucii", "removeItem":"anulus_aureus", "updateQuest": { "id": "anulus_lucii", "status": "completed" } }
     ]
   },
   "forum_tabernae": {
@@ -265,18 +265,19 @@
     "text": "In vestibulo Cryptae, faces antiquae, mirabili modo, etiamnunc ardent. Parietes sculpturis arcanis ornantur, imagines bestiarum et deorum antiquorum repraesentantes. Duo itinera ante te patent: unum ad sinistram, ubi sonus aquae fluentis auditur, alterum ad dextram, ubi silentium altum regnat.",
     "choices": [
       { "text": "Perge ad sinistram (sonus aquae).", "nextScene": "crypta_aqua" },
-      { "text": "Perge ad dextram (silentium).", "nextScene": "crypta_silentium" }
+      { "text": "Perge ad dextram (silentium).", "nextScene": "crypta_silentium" },
+      { "text": "Hunc locum timere incipis; revertere ad oppidum.", "nextScene": "oppidum_centrum" }
     ]
   },
   "crypta_aqua": {
-    "text": "Sequeris sonum aquae et pervenis ad cameram ubi rivus subterraneus per saxa fluit. Pons lapideus, vetustate corrosus, rivum transit. In medio ponte, symbolum idem ac in anulo Lucii sculptum est.",
+    "text": "Sequeris sonum aquae et pervenis ad cameram ubi rivus subterraneus per saxa fluit. Pons lapideus, vetustate corrosus, rivum transit. In medio pontis, stela glyphis ornata est.",
     "choices": [
-      { "text": "Transi pontem cautissime.", "nextScene": "crypta_pons", "requiresItem": "anulus_aureus" },
-      { "text": "Sine anulo, ne pontem temptes; revertere.", "nextScene": "crypta_vestibulum" }
+      { "text": "Transi pontem cautissime.", "nextScene": "crypta_pons", "requiresItem": "medallum_lucii" },
+      { "text": "Sentis quasi hae glyphæ te transeundum prohibeant; revertere.", "nextScene": "crypta_vestibulum" }
     ]
   },
   "crypta_pons": {
-    "text": "Cum anulum tangis, symbolum in ponte luce tenui fulget, et pons firmior videtur sub pedibus tuis. Pontem sine periculo transis et ad ianuam aeneam pervenis, in cuius medio cavum forma gladii sculptum est.",
+    "text": "Cum medallum tangis, symbolum in ponte luce tenui fulget, et pons firmior videtur sub pedibus tuis. Pontem sine periculo transis et ad ianuam aeneam pervenis, in cuius medio cavum forma gladii sculptum est.",
     "choices": [
       { "text": "Insere gladium in cavum.", "nextScene": "crypta_ianua_aenea", "requiresItem": "gladius" },
       { "text": "Sine gladio apto, ianuam non aperies; revertere.", "nextScene": "crypta_vestibulum" }
@@ -324,7 +325,6 @@
     "text": "Custos umbrarum ante te stat, gladio nigro armatus. 'Quis es tu, qui pacem meam perturbas?' inquit voce sicut tonitru. 'Solum ille qui dignus est gemmam tangere hinc vivus exibit!'",
     "choices": [
       { "text": "Pugna contra custodem cum gladio rubiginoso.", "nextScene": "crypta_victoria", "requiresItem": "gladius" },
-      { "text": "Pugna contra custodem cum gladio Lucii.", "nextScene": "crypta_victoria", "requiresItem": "gladius_lucii" },
       { "text": "Ostende amuletum argenteum custodi.", "nextScene": "crypta_amuletum_finale", "requiresItem": "amuletum_argenteum" }
     ]
   },
