@@ -45,6 +45,7 @@
   "sanare": "aegrum sanum facere",
   "arcanus": "occultus, secretus, qui non omnibus notus est",
   "vestibulum": "spatium primum post ianuam, ante cameram principalem",
+  "cameram": "conclave subterraneum fornicatum, tecto arcuato instructum",
   "camera": "spatium clausum intra aedificium vel sub terra",
   "rivus": "aqua parva quae currit, minor quam flumen",
   "pons": "structura per quam flumen vel rivus transitur",
@@ -82,5 +83,9 @@
   "te excipiunt": "te accipiunt vel salutant cum in locum intras",
   "fruentes": "re aliqua delectantes vel cum voluptate utentes",
   "exhalare": "spiritum vel odorem ex se emittere",
-  "glyphis": "forma vel imago visualis qua elementum scriptorium, ut littera vel signum, ostenditur"
+  "glyphis": "forma vel imago visualis qua elementum scriptorium, ut littera vel signum, ostenditur",
+  "acutum": "bene secans, exacutum",
+  "faces": "lignum ardens ad lumen praebendum",
+  "Parietes": "muri domus vel aedificii qui spatia intus dividunt aut claudunt",
+  "arca": "capsa lignea vel metallica ad res custodiendas"
 }
